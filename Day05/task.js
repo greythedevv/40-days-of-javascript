@@ -21,7 +21,7 @@ for (let i=1; i<=10; i++){
 
     
 let ans = 0   
-
+// odd number
 for (let a= 1; a<=500; a++){
         if(a % 2 === 1){
             ans = ans + a
