@@ -14,7 +14,7 @@ if (age >= 18) {
   console.log("Eligible for a driving license");
 } else {
   console.log("Not eligible for a driving license");
-}
+};
 
 // Calculate CTC with a Bonus
 let monthlySalary = 12300;
@@ -76,3 +76,5 @@ let count = 5;
 let doubled = count << 1;
 
 console.log("Doubled value:", doubled);
+
+
