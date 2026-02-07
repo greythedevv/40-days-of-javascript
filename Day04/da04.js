@@ -35,6 +35,9 @@ switch (position)
     case 2 : console.log("Print 2");break;
     default: console.log("noting is matched");
 
-}
+};
+
+
+
 
 
