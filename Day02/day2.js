@@ -41,4 +41,7 @@ let colors = ["red", "blue", "green"];
 console.log(colors);
 
 colors = ["yellow", "purple", "orange"];
-console.log(colors);
+console.log(colors)
+
+
+
