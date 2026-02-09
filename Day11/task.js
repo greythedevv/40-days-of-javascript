@@ -40,14 +40,14 @@ console.log(testClosure()());
 
 // Write a function createMultiplier(multiplier) that returns another function to multiply numbers.
 
-function createMultiplier(multiplier){
-
-    return function (a, b){
-        console.log(a*b);
-    }
+function createMultiplier(multiplier) {
+    return function(number) {
+        return number * multiplier;
+    };
 }
-let sol = createMultiplier()
-console.log(sol(2,30))
+const double = createMultiplier(2);
+double(5);
+
 
 
 // What happens if a closure references an object?
