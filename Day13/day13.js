@@ -21,3 +21,6 @@ function greetMe(obj){
 greetMe(tom);
 tom.logMessage()
 console.log(this.name)
+
+
+
