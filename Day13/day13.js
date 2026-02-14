@@ -17,10 +17,11 @@ function greetMe(obj){
     }
     console.log(obj)
 }
-
+uh
 greetMe(tom);
 tom.logMessage()
 console.log(this.name);
+
 
 
 

@@ -78,7 +78,7 @@ A comprehensive 40-day JavaScript learning journey from beginner to advanced con
 │   ├── 02/
 │   └── ...
 └── projects/
-```
+
 
 ## 🛠️ Technologies Used
 
