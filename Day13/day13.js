@@ -1,3 +1,5 @@
+"use strict";
+
 console.log("Day 13 JS file is loaded"); 
 
 
@@ -17,10 +19,25 @@ function greetMe(obj){
     }
     console.log(obj)
 }
-uh
+
 greetMe(tom);
-tom.logMessage()
+tom.logMessage() 
+
+
 console.log(this.name);
+
+function outer(a){
+    console.log("this is the outer fnction", this);
+
+    return function inner(b){
+        console.log("this is the inner ", this)
+    }
+}
+
+const real = outer(5);
+real(33);
+
+
 
 
 
