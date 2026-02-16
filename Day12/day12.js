@@ -8,6 +8,7 @@ let user = {
 }
 
 
+
 console.log(user["is admn"])
 
 user.hobbies = "plaing"
