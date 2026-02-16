@@ -87,6 +87,5 @@ A comprehensive 40-day JavaScript learning journey from beginner to advanced con
 - TailwindCSS
 - Node.js
 
----
 
 ⭐ Star this repo if you find it helpful!
