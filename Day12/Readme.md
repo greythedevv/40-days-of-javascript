@@ -51,6 +51,7 @@ const person = {
   }
 };
 
+
 const { name, company, company: { location: { city } } } = person;
 console.log(name);    // Tapas
 console.log(company); // { name: "tapaScript", location: {...} }
