@@ -143,7 +143,7 @@ const user1 = {
 };
 
 
-✅ Works correctly because arrow functions inherit this.
+ Works correctly because arrow functions inherit this.
 
 🏗 Constructor Functions
 
