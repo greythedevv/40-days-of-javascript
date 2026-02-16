@@ -17,7 +17,7 @@ function greetMe(obj){
     obj.logMessage = function (){
         console.log(`${this.name} is ${this.age} years old!`)
     }
-    console.log(obj)
+    console.log(obj);
 }
 
 greetMe(tom);
