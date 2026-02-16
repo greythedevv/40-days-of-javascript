@@ -44,3 +44,13 @@ let student = {
 
 let bbb = student.parent.father
 console.log(bbb)
+
+
+
+function user2 (name, level){
+    this.name = name;
+    this.level = level;
+}
+
+const greatness = new user2 ("greatness", "100");
+console.log(greatness)
