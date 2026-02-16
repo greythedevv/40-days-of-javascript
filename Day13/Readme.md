@@ -7,7 +7,6 @@
   <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" />
 </p>
 
----
 
 ## 📚 Table of Contents
 
