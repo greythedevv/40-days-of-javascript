@@ -112,7 +112,7 @@ console.log("nonintresting" in Book)
 // [ ["name", "Alex"], ["age", 25], ["country", "Nigeria"] ]
 
 
-// ✅ Explanation:
+// Explanation:
 // Object.entries() goes one step further than Object.keys() — it gives both the keys and their corresponding values.
 
 
