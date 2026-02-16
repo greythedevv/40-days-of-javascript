@@ -91,7 +91,7 @@ console.log("nonintresting" in Book)
 // ["name", "age", "country"]
 
 
-// ✅ Explanation:
+//  Explanation:
 // Object.keys() looks at the object and only collects the property names.
 
 // 2. Object.entries()
