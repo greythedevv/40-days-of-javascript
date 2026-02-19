@@ -203,9 +203,139 @@ const departments = [
   { id: 4, name: "Sales" },
 ];
 
+// Can you filter employees who work in the "Engineering" department?
+let workersEngi = Object.groupBy(employees, ({departmentId}) => {
 
-let workersEngi = Object.groupBy(employees, ({departmentId}) => 
+ return departmentId === 2 ? "Engineering" :"others"
+
+// return departmentId===2 ? "Engineering" : "Other";
+})
+console.log(workersEngi)
+
+// Create a new array that combines employee names and department names in the format: "Alice (HR)".
+
+let nameDepartment = employees.map(employee => {
+    const department = departments.find(d => d.id === employee.departmentId);
     
-return departmentId===2 ? "Engineering" : "Other";
+    return `${employee.name} (${department ? department.name : "Unknown"})`;
+});
+
+console.log(nameDepartment)
+
+// Find the highest salary among employees.
+
+let highestSalary =  employees.reduce((max, employee) => {   
+    return employee.salary > max.salary ? employee : max;
+});
+
+console.log(highestSalary)
+
+// Check if there is at least one employee in the "Sales" department.
+
+let salesEmployee = employees.some(employees => employees.departmentId ===4)
+    
+console.log(salesEmployee)
+
+// Write a function to filter employees earning more than 6000.
+
+let filteredEmploee = employees.filter(employees => {
+    if (employees.salary > 6000){
+        return employees
+    }
 })
 
+console.log(filteredEmploee)
+
+// Create an array of employee names only
+let employeeName = employees.map (employees => employees.name)
+console.log(employeeName)
+
+// Calculate the total salary of all employees using
+let count = 0
+let totalSalary = employees.map(employees => employees.salary)
+console.log(totalSalary)
+
+let reducedValue = totalSalary.reduce((accum, salary) => {
+    return accum + salary
+},0)
+
+console.log(reducedValue)
+
+// Is there any employee earning less than 5000?
+
+let anyEmployee = employees.some (employees => employees.salary < 5000 )
+console.log(anyEmployee)
+
+// Find the first employee who earns exactly 5100
+
+let firstEmployee = employees.find(employees => employees.salary === 5100)
+console.log(firstEmployee)
+
+// Find the last employee in the "HR" department.
+
+const lastHR = employees.findLast(employee => {
+  const department = departments.find(d => d.id === employee.departmentId);
+  return department.name === "HR";
+});
+
+console.log(lastHR);
+
+// Find the first employee in the "Marketing" department.
+
+const lastMar = employees.findLast(employee => {
+  const department = departments.find(d => d.id === employee.departmentId);
+  return department.name === "Marketing";
+});
+
+console.log(lastMar);
+
+// Check if all employees earn more than 4000.
+
+let earnMore = employees.every(employees => employees.salary > 4000)
+console.log(earnMore)
+
+//  Find the first employee in the "Sales" and "HR" department.
+const firstEmployees = employees.find (employees => {
+    let department = departments.find(departments => departments.id === employees.departmentId )
+    return department.name ==="HR"
+})
+console.log(firstEmployees)
+
+const firstEmployees1 = employees.find (employees => {
+    let department = departments.find(departments => departments.id === employees.departmentId )
+    return department.name ==="Sales"
+})
+console.log(firstEmployees1)
+
+
+// Verify if all employees belong to a department listed in the departments array.
+
+let employeeDeartment1 = employees.every(employees => departments.id === employees.departmentId)
+
+console.log(employeeDeartment1)
+
+//  Log each employee's name and department name to the console.
+
+let employeer1 = employees.forEach(employees => {
+  const department = departments.find(d => d.id === employees.departmentId);
+  console.log(`${employees.name} (${department ? department.name : "Unknown"})`);
+});
+
+// Extract all employee names into a single array.
+
+let employeeName1 = employees.map(employees => employees.name)
+console.log(employeeName1)
+
+//  Increment each employee's salary by 10%
+
+let increasedSalary = employees.map(employees => employees.salary  )
+console.log(increasedSalary)
+
+ let increasedSalary1 = increasedSalary.map(salar => salar * 1.1)
+ console.log(increasedSalary1)
+
+//  Assume each employee can have multiple skills. Create an array of employee skills and flatten them. 
+//  Example: [{name: "Alice", skills: ["Excel", "Management"]}, ...].
+
+
+ 
