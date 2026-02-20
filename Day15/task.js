@@ -337,5 +337,56 @@ console.log(increasedSalary)
 //  Assume each employee can have multiple skills. Create an array of employee skills and flatten them. 
 //  Example: [{name: "Alice", skills: ["Excel", "Management"]}, ...].
 
+const employees1 = [
+  { name: "Alice", skills: ["Excel", "Management"] },
+  { name: "Bob", skills: ["JavaScript", "React"] },
+  { name: "Ian", skills: ["Excel", "Communication"] }
+];
 
- 
+let employeeSkills =(employees1.flatMap(employee => employee.skills))
+console.log(employeeSkills)
+
+
+//  Find the total salary of all employees working in the "Engineering" department.
+
+let totalSalary2 = employees.reduce((accum , employees) => {
+    let totalSalary3 = departments.find(departments => departments.id === employees.departmentId )
+
+    return  departments.name === "Engineering" ? accum + employees.salary : accum
+},0)
+console.log(totalSalary2)
+
+//  Check if there is any department where all employees earn more than 5000.
+let departmentSalary = departments.some(departments => {    
+    const allEmployeesInDepartment = employees.filter(e => e.departmentId === departments.id);
+    return allEmployeesInDepartment.every(e => e.salary > 5000);
+});
+console.log(departmentSalary);
+
+
+// const employees = [
+//   { id: 1, name: "Alice", projects: ["Project A", "Project B"] },
+//   { id: 2, name: "Bob", projects: ["Project B", "Project C"] },
+//   { id: 3, name: "Clara", projects: ["Project D"] }
+// ];
+
+
+// const uniqueProjects = new Set(
+//   employees.flatMap(employee => employee.projects)
+// );
+
+// const totalUniqueProjects = uniqueProjects.size;
+
+// console.log(totalUniqueProjects);
+
+
+// const employeeDepartments = employees.map(employee => {
+//   const department = departments.find(
+//     d => d.id === employee.departmentId
+//   );
+
+//   return `${employee.name} (${department?.name || "Unknown"})`;
+// });
+
+// console.log(employeeDepartments);
+
