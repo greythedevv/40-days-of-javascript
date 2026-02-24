@@ -1,0 +1,17 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+li.completed {
+    text-decoration: line-through;
+    
+}
+
+.normal {
+    text-decoration: line-through;
+}
