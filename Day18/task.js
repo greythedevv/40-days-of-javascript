@@ -138,8 +138,32 @@ searchInput.addEventListener("input", function () {
 })
 
 
+// 3. Theme Switcher with Persistence
+// Toggle theme using a button or switch.
+// Persist the theme in localStorage and apply on page load.
+// Change background and text color based on the theme.
+
+let themeToggleButton = document.createElement("button")
+themeToggleButton.innerText = "Toggle Theme"
+document.body.appendChild(themeToggleButton)
 
 
+themeToggleButton.addEventListener("click", function(){
+    document.body.classList.toggle("toggle1")
+    if(document.body.classList.contains("toggle1")){
+        localStorage.setItem("theme", "dark")
+    } else {
+        localStorage.setItem("theme", "light")
+    }
+    
+})
+
+window.addEventListener("load", function(){
+    let savedTheme = localStorage.getItem("theme")
+    if(savedTheme === "dark"){
+        document.body.classList.add("toggle1")
+    }
+})
 
 
 
