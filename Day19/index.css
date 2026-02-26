@@ -1,3 +1,14 @@
 .toggle{
     background-color: black;
 }
+
+#target{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+
+

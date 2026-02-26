@@ -39,6 +39,7 @@ Aform.addEventListener("submit", function(event){
         number: formNumber.value
     }
     console.log(formData)
+ 
 })
 
 
