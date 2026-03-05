@@ -1,0 +1,8 @@
+{
+   "name" : "john doe",
+   "age" : 30,
+   "address" : {
+        "street" : "akoka",
+        "house number": 330
+   }
+}
