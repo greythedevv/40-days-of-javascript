@@ -1,5 +1,5 @@
 // JavaScript
-const API_KEY = "3694313f"; // replace with your OMDB API key
+const API_KEY = "3694313f";
 
 // 1️⃣ Search movies by keyword (s=)
 async function movieapp(keyword) {
@@ -82,7 +82,7 @@ async function showMovieDetails(imdbID) {
 function displayMovieDetails(data) {
   const html = `
     <h2>${data.Title} (${data.Year})</h2>
-    <img src="${data.Poster !== "N/A" ? data.Poster : 'https://via.placeholder.com/200'}" width="200"/>
+    <img src="${data.Poster !== "N/A" ? data.Poster : 'assets/download (4).png'}" width="200"/>
     <p><strong>Genre:</strong> ${data.Genre}</p>
     <p><strong>Director:</strong> ${data.Director}</p>
     <p><strong>Actors:</strong> ${data.Actors}</p>
