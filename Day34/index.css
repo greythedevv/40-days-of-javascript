@@ -1,0 +1,105 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    /* background: linear-gradient(135deg,#4facfe,#00f2fe); */
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* MAIN CARD */
+.card{
+    background:white;
+    width:650px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* HEADINGS */
+h1{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+h2{
+    margin-top:25px;
+    margin-bottom:10px;
+    color:#333;
+}
+
+/* USER SWITCHER */
+select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+/* FORM */
+form div{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:600;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:14px;
+}
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#063966;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#2f80ed;
+}
+
+/* BOOK SECTIONS */
+section{
+      
+    margin-top:20px;
+}
+
+/* BOOK LIST */
+ul{
+    list-style:none;
+    margin-top:10px;
+}
+
+li{
+    background:#f4f6f9;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+}

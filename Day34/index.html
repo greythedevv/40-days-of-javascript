@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <script type="module" defer src="day34.js"></script>
+</head>
+<body>
+    <div class="card">
+        <h1>📚Library Management System</h1>
+
+        <!-- user switcher -->
+    <div>
+        <label for="userSwitcher">Choose user view</label>
+        <select name="" id="userSwitcher">
+            <option value="member">Member View</option>
+            <option value="admin">Admin View</option>
+        </select>
+    </div>
+
+    <!-- book entry -->
+     <section id="newbook">
+     <h2 >Add new book</h2>
+     <form action="" id="bookForm">
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" required>
+        </div>
+         <div>
+            <label for="Author">Author</label>
+            <input type="text" id="Author" required>
+        </div>
+         <div>
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" required>
+        </div>
+        <button>Add Book</button>
+     </form>
+     </section>
+     <!-- Avalable book -->
+     <section id="avalableBooks">
+     <h2>Available Books</h2>
+     <ul id="bookList"></ul>
+
+     </section>
+
+     <!-- Borrowed Books -->
+       <section id="borrowedBooks">
+     <h2>Borrowed Books</h2>
+     <ul id="borrowedBookList"></ul>
+
+     </section>
+
+    </div>
+</body>
+</html>
