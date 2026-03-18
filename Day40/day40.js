@@ -9,14 +9,23 @@ class ExpenseApp{
         this.UserService = new UserService();
         this.ExpenseService = new ExpenseService(this.UserService)
     }
-}
 
-init() 
+
+    init() 
    { try{
         this.ui =new ExpenseUI(this.UserService, this.ExpenseService)
         console.log("splitter App initialized sucessfully")
     } catch(error){
-        console.log("failed to initialize app", error)
+        console.error("failed to initialize app", error)
     }}
+}
 
-    
+let expenseApp;
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    expenseApp= new ExpenseApp();
+    expenseApp.init()
+})
+
+
+

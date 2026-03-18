@@ -8,4 +8,8 @@ export class DOMHelpers{
         return element
     }
 
+    static createOption(text, value){
+        return new Option(text, value)
+    }
+
 }

@@ -1,49 +1,51 @@
-import{User} from "../models/user.js"
+import { User } from "../models/user.js";
 
-export class UserService {
-    constructor(){
-        this.users = new Map()
-
-
+export class UserService{
+    constructor() {
+        this.users = new Map();
     }
-    addUser(name){
-        if(!name){
-            throw new Error("user name is required")
+
+    addUser(name) {
+        if (!name) {
+            throw new Error("user name is required");
         }
-        let trimmedName = name.trim();
-        if(this.users.has(trimmedName)){
-            throw new Error ("user already exists")}
-        const user = new User(trimmedName)
-        this.users.set(trimmedName, user)
-        return user 
+
+        const trimmedName = name.trim();
+
+        if (this.users.has(trimmedName)) {
+            throw new Error("user already exists");
+        }
+
+        const user = new User(trimmedName);
+        this.users.set(trimmedName, user);
+        return user;
     }
 
-    getuser(name){
-        return this.users.get(name)
+    getUser(name) {
+        return this.users.get(name.trim());
     }
 
-    getAllUsers(){
-       return Array.from(this.users.values())
+    getAllUsers() {
+        return Array.from(this.users.values());
     }
 
-    getuserNames(){
-        return Array.from(this.users.keys())
+    getUserNames() {
+        return Array.from(this.users.keys());
     }
 
-    hasUser(name){
-        return this.users.has(name)
+    hasUser(name) {
+        return this.users.has(name.trim());
     }
 
-    getUserCount(){
-      
-     return this.users.size()
+    getUserCount() {
+        return this.users.size; // ✅ fixed
     }
 
-    deleteAUser(user){
-        this.user.delete(user)
+    deleteAUser(name) {
+        this.users.delete(name.trim()); // ✅ fixed
     }
 
-    clear(){
-        this.users.clear()
+    clear() {
+        this.users.clear();
     }
 }
