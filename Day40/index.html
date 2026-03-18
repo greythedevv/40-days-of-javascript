@@ -1,0 +1,99 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splitter</title>
+    <script type="module" defer src="day40.js"></script>
+    <link rel="stylesheet" href="day40.css">
+ </head>
+ <body>
+   <div class="container">
+        <header class="header">
+                <!-- logo -->
+                <div class="left-header">
+                    <h1><span>💸</span>Splitter</h1>
+                    <p>Split expenses with friends effortlessly</p>
+                </div>
+
+                <!-- Navigation Bar -->
+                <div class="right-header">
+                    <nav class="nav-bar">
+                        <button>Import</button>
+                        <button>Export</button>
+                    </nav>
+                </div>
+        </header>
+        <main>
+            <section class="user">
+                <!--User form -->
+                <div class="usersInput">
+                    <form id="addUserForm" class="addUserForm" action="">
+                        <h2>Add User</h2>
+                        <div class="user-Input">
+                            <input type="text" placeholder="add user name" id="userinput">
+                            <button type="submit">Add User</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Expense Form -->
+                <div class="expense-form" >
+                    <h2>Add Expenses</h2>
+                    <div>
+                        <label for="expenseUserInput">Who Paid</label>
+                        <select name="" id="expenseUserInput"></select>
+                    </div>
+                    <div>
+                        <label for="amountInput">Amount paid</label>
+                        <input type="number" id="amountInput" class="amountInput"
+                         placeholder="Enter amount e.g 100" min="0" step="0.01">
+                    </div>
+                    <div>
+                        <label for="expenseReasonInput">Description</label>
+                        <input type="text" id="expenseReasonInput" class="expenseReasonInput"
+                         placeholder="e.g ice cream" min="0" step="0.01">
+                    </div>
+                    <button>Add Expense</button>
+                </div>
+            </section>
+            <!-- Expenses Section -->
+            <section class="expenses">
+                <div id="renderExpenses" class="renderExpenses">
+                    <h2>Expense Overview</h2>
+                    <div>
+                         <!-- All Payment -->
+                        <h3>All Payment</h3>
+                    <div>
+                       <ul></ul>
+                    </div>
+                        <!-- split Button -->
+                    <div>
+                        <button id="SimplifyBtn">Split It!</button>
+                    </div>
+                        <!-- Settlement -->
+                    <div>
+                        <h2>Who Owes Whom</h2>   
+                        <div>
+                            <ul id="resultArea"></ul>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+   </div>
+        <footer>
+            <div><p>Made with💖 by grey for spliting expenses fairly</p></div>
+            <div><div class="right-header">
+                    <nav class="nav-bar">
+                        <button>Import</button>
+                        <button>Export</button>
+                    </nav>
+                </div></div> 
+        </footer>
+    
+ </body>
+ </html>

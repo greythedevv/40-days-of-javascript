@@ -1,0 +1,178 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  background: #f4f6fb; /* clean solid color */
+  color: #333;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.left-header h1 {
+  font-size: 28px;
+}
+
+.left-header p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Nav buttons */
+.nav-bar button {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  background: #F4F6FB;
+  color: #333;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: 0.3s;
+}
+
+.nav-bar button:hover {
+  background: #eee;
+}
+
+/* Layout sections */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cards */
+.usersInput,
+.user > div,
+.renderExpenses {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* User + Expense layout */
+.user {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Inputs */
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Buttons */
+button {
+  padding: 10px;
+  border: none;
+  background: #4a6cf7;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #3a55d1;
+}
+
+/* Split Button */
+#SimplifyBtn {
+  background: #8e44ad;
+  margin: 10px 0;
+}
+
+#SimplifyBtn:hover {
+  background: #732d91;
+}
+
+/* Expense Section Layout */
+.renderExpenses > div {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+
+/* Lists */
+ul {
+  list-style: none;
+}
+
+ul li {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Highlight boxes */
+.renderExpenses ul {
+  min-height: 150px;
+  background: #fafafa;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+  margin-top: 30px;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .user {
+    grid-template-columns: 1fr;
+  }
+
+  .renderExpenses > div {
+    grid-template-columns: 1fr;
+  }
+
+  #SimplifyBtn {
+    width: 100%;
+  }
+}
