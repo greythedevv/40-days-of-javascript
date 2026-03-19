@@ -12,6 +12,8 @@ export class ExpenseUI{
         this.initializeElement();
         this.bindEvent();
         this.initializeSelectBox()
+        
+        
     }
 
     initializeElement(){
@@ -20,18 +22,26 @@ export class ExpenseUI{
             userinput: DOMHelpers.getElementById("userinput"),
             expenseUserInput: DOMHelpers.getElementById("expenseUserInput"),
             amountInput: DOMHelpers.getElementById("amountInput"),
-            expenseReasonInput: DOMHelpers.getElementById("expenseReasonInput")
+            expenseReasonInput: DOMHelpers.getElementById("expenseReasonInput"),
+            addExpenseForm: DOMHelpers.getElementById("addExpenseForm"),
+            paymentList: DOMHelpers.getElementById("payment-list")
 
         }
     }
     // Bind Events
     bindEvent(){
+         if (!this.element.addUserForm || !this.element.addExpenseForm) {
+        console.error("Forms not found in DOM", this.element);
+        return;
+    }
+
+
         this.element.addUserForm.addEventListener("submit", (e) =>{
             this.handleAddUser(e);
 
         })
 
-        this.element.addExpenseForm.addEventListener("submit", function(e){
+        this.element.addExpenseForm.addEventListener("submit", (e)=>{
             this.handleAddExpense(e)
         })
     }
@@ -62,22 +72,47 @@ export class ExpenseUI{
         console.log(`All user ${this.userServices.getUserCount()}`)
         } catch(error){
          console.error("Error adding User", error)   
-         showSuccessToast(error.message)
+         showErrorToast(error.message)
         }
     }
+
+    //  add user to selct 
 
     addUserToSelect(userName){
         const option = DOMHelpers.createOption(userName, userName)
         this.element.expenseUserInput.add(option)
     }
 
+    //  handle add expense
+
     handleAddExpense(e){
-        e.preventDefault
+        e.preventDefault()
 
         try{
+            const paidBy = this.element.expenseUserInput.value.trim()
+            const amount = this.element.amountInput.valueAsNumber
+            const description = this.element.expenseReasonInput.value.trim()
+            if(!paidBy){throw new Error("please select a user")}
 
-        }catch(error){
-            
+        if(!amount || amount <= 0){throw new Error ("please enter an amount greater than zero")}
+
+        const expense = this.expenseServices.addExpense(paidBy, amount, description)
+
+        // render the expense
+        this.renderExpense(expense)
+
+        // reset the form
+            this.element.amountInput.value = ""
+            this.element.expenseReasonInput.value =""
+        // show toast 
+            showSuccessToast(`Expense ${amount} added by ${paidBy}`)
+         }catch(error){
+            console.error("Error adding Expense", error)   
+            showErrorToast(error.message)
         }
+    }
+
+    renderExpense(expense){
+        
     }
 }

@@ -12,4 +12,8 @@ export class DOMHelpers{
         return new Option(text, value)
     }
 
+    static createListItem(text, className =""){
+            const li = document.createElement("li")
+    }
+
 }
