@@ -21,5 +21,25 @@ export class DOMHelpers{
             }
 
             return li
+            
+}
 
-}}
+    static clearElement(element){
+        while (element.firstChild){
+            element.removeChild(element.firstChild)
+        }
+    }
+
+    static appendFragment(parent, item, createItemFn){
+        const fragment = document.createDocumentFragment()
+
+        item.forEach(item => { 
+            fragment.appendChild(createItemFn(item))
+            
+        });
+
+        parent.appendChild(fragment)
+    }
+
+
+}

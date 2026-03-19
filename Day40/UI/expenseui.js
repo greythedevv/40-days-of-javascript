@@ -25,7 +25,8 @@ export class ExpenseUI{
             expenseReasonInput: DOMHelpers.getElementById("expenseReasonInput"),
             addExpenseForm: DOMHelpers.getElementById("addExpenseForm"),
             paymentList: DOMHelpers.getElementById("payment-list"),
-            SimplifyBtn: DOMHelpers.getElementById("SimplifyBtn")
+            SimplifyBtn: DOMHelpers.getElementById("SimplifyBtn"),
+            resultArea: DOMHelpers.getElementById("resultArea")
 
         }
     }
@@ -139,6 +140,19 @@ export class ExpenseUI{
     }
 
     displayResults(results){
-        
+        console.log(results)
+
+        DOMHelpers.clearElement(this.element.resultArea)
+
+        if(results.length===0){
+            const noResultIteem = DOMHelpers.createListItem("All expenses are settled!", "no-results")
+
+            this.element.resultArea.appendChild(noResultIteem)
+            return
+        }
+
+        DOMHelpers.appendFragment(this.element.resultArea, results, (results)=> DOMHelpers.createListItem(results, "settlement-item"))
     }
+
+    
 }

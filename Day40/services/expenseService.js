@@ -61,12 +61,14 @@ export class ExpenseService {
 
    calculateSettlements(net) {
         const results = [];
+
+        // filter ut balance people
         const names = Object.keys(net).filter(name => Math.abs(net[name]) > 0.01);
-
+    // sort out balance
         names.sort((a, b) => net[a] - net[b]);
-
-        let i = 0;
-        let j = names.length - 1;
+        // two pointer technique
+        let i = 0;   //points to person who owes most money
+        let j = names.length - 1; // pointsto person who is owed most money
 
         while (i < j) {
             const creditor = names[j];
@@ -74,9 +76,9 @@ export class ExpenseService {
             const settlement = Math.min(-net[debtor], net[creditor]);
 
             if (settlement > 0.01) {
-                net[debtor] += settlement;
-                net[creditor] -= settlement;
-                results.push(`${debtor} owes ${creditor} ₹${settlement.toFixed(2)}`);
+                net[debtor] += settlement; //reduce debtors debt
+                net[creditor] -= settlement; // reduce creditor credit 
+                results.push(`${debtor} owes ${creditor} $${settlement.toFixed(2)}`);
             }
 
             if (Math.abs(net[debtor]) < 0.01) i++;
