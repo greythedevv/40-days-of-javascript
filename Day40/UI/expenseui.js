@@ -24,7 +24,8 @@ export class ExpenseUI{
             amountInput: DOMHelpers.getElementById("amountInput"),
             expenseReasonInput: DOMHelpers.getElementById("expenseReasonInput"),
             addExpenseForm: DOMHelpers.getElementById("addExpenseForm"),
-            paymentList: DOMHelpers.getElementById("payment-list")
+            paymentList: DOMHelpers.getElementById("payment-list"),
+            SimplifyBtn: DOMHelpers.getElementById("SimplifyBtn")
 
         }
     }
@@ -43,6 +44,10 @@ export class ExpenseUI{
 
         this.element.addExpenseForm.addEventListener("submit", (e)=>{
             this.handleAddExpense(e)
+        })
+
+        this.element.SimplifyBtn.addEventListener("click", ()=>{
+            this.handleSimplify()
         })
     }
 
@@ -121,5 +126,19 @@ export class ExpenseUI{
 
         const listItem = DOMHelpers.createListItem(text, "expense-item")
         this.element.paymentList.appendChild(listItem)
+    }
+
+    handleSimplify(){
+        try{
+            const results = this.expenseServices.simplifyExpenses()
+            this.displayResults(results)
+        }catch(error){
+          console.error("Error simplifying expenses", error)   
+            showErrorToast(`Error simplifying expenses ${error.message}`)  
+        }
+    }
+
+    displayResults(results){
+        
     }
 }
