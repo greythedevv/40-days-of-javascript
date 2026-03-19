@@ -28,4 +28,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
 })
 
 
-
+// load for the toaster
+Window.addEventListener("load", ()=>{
+    if(!expenseApp){
+        expenseApp = new ExpenseApp()
+        expenseApp.init()
+    }
+})
