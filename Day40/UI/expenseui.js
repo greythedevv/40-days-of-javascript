@@ -113,6 +113,13 @@ export class ExpenseUI{
     }
 
     renderExpense(expense){
-        
+
+        const text = expense.description !== "No description"? 
+
+       ` ${expense.paidBy} paid $${expense.amount} for ${expense.description}`
+        :`${expense.paidBy} paid $${expense.amount}`
+
+        const listItem = DOMHelpers.createListItem(text, "expense-item")
+        this.element.paymentList.appendChild(listItem)
     }
 }
