@@ -4,9 +4,9 @@
 
 #target{
     background-color: red;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    color: white
+    cursor: pointer
+    transition: all 0.3s ease
 
 }
 
