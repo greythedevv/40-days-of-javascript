@@ -14,7 +14,7 @@ let meee1 = document.getElementById("today")
 meee1.innerHTML =",today is not for play"
 
 let remove1 = document.getElementById("myList")
-let itemToRemove = remove1.children[0];
+let itemToRemove = remove1.children[0]
 remove1.removeChild(itemToRemove)
 
 
